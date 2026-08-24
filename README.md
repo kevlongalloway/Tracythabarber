@@ -43,6 +43,17 @@ Currently listed:
 > Note: the two haircut tiers as given leave ages 18–20 unlisted. Decide which
 > tier they fall into and adjust the labels.
 
+## Tracy's portrait
+
+The photo of Tracy in The Barber section is `assets/img/tracy.jpg` (plus a
+smaller `tracy@800.jpg` for phones). To swap it, save the replacement at those
+two sizes under the same names — the section is built for a tall portrait,
+roughly 2:3, with him full-length in the frame.
+
+The copy in that section describes how he works. It makes no claims about
+years in business, training or awards — add those yourself if you want them
+in there.
+
 ## Adding photos
 
 1. Drop the new photo in `assets/img/`. Save two sizes with the same name:

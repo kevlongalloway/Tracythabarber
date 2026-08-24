@@ -95,6 +95,9 @@ h1,h2,h3{
 
 main, .masthead, .footer{ position:relative; z-index:1; }
 
+/* anchor jumps must clear the sticky masthead */
+[id]{ scroll-margin-top:clamp(58px,7vw,74px); }
+
 /* ═══ SHARED ═════════════════════════════════════════════════ */
 .eyebrow{
   font-family:var(--serif);
@@ -277,6 +280,60 @@ main, .masthead, .footer{ position:relative; z-index:1; }
 .creds li:last-child{ border-bottom:1px solid var(--rule); }
 .creds h3{ font-size:1.125rem; letter-spacing:-.02em; margin-bottom:.4rem; }
 .creds p{ margin:0; color:var(--muted); font-size:.9375rem; }
+
+
+/* ═══ THE BARBER ═════════════════════════════════════════════ */
+.barber{
+  background:var(--ink); color:var(--paper);
+  display:grid; grid-template-columns:1fr;
+  align-items:stretch;
+}
+@media (min-width:960px){
+  .barber{ grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); }
+}
+
+/* the portrait runs to the edge of the screen — he is not boxed in */
+.barber__shot{ margin:0; }
+.barber__shot img{
+  width:100%; height:100%;
+  aspect-ratio:2/3; object-fit:cover; object-position:center 30%;
+  min-height:clamp(420px,62vw,900px);
+}
+@media (min-width:960px){
+  .barber__shot img{ aspect-ratio:auto; min-height:100%; }
+}
+
+.barber__body{
+  display:flex; flex-direction:column; justify-content:center;
+  padding:var(--section-y) var(--gutter);
+  max-width:64ch;
+}
+@media (min-width:960px){
+  .barber__body{ padding-inline:clamp(2.5rem,5vw,5.5rem); }
+}
+
+.barber__name{
+  font-size:clamp(3rem,11vw,7rem);
+  line-height:.86; letter-spacing:-.045em;
+  margin-bottom:clamp(1.75rem,3.5vw,2.5rem);
+}
+
+.barber__lead{
+  font-size:clamp(1.35rem,2.8vw,2rem);
+  font-weight:900; text-transform:uppercase;
+  letter-spacing:-.03em; line-height:1.05;
+  margin-bottom:1.2rem;
+}
+.barber__body p:not(.barber__lead):not(.eyebrow){ color:var(--muted-d); max-width:46ch; }
+
+.barber__quote{
+  margin:clamp(1.75rem,3.5vw,2.5rem) 0 0;
+  padding-top:clamp(1.75rem,3.5vw,2.5rem);
+  border-top:1px solid var(--rule-d);
+  font-family:var(--serif);
+  font-size:clamp(1.35rem,3vw,2rem);
+  line-height:1.25; max-width:24ch;
+}
 
 /* ═══ THE WORK ═══════════════════════════════════════════════ */
 /* hairline gutters, so the photographs read as one block */
