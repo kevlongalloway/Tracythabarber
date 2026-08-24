@@ -60,6 +60,34 @@ The copy in that section describes how he works. It makes no claims about
 years in business, training or awards — add those yourself if you want them
 in there.
 
+## The hero slideshow
+
+The header cycles through five cuts, crossfading every six seconds with a
+slow drift in on each new frame.
+
+The slides are `assets/img/hero-1.jpg` … `hero-5.jpg`, each with a smaller
+`@900` version for phones. They live in `.hero__slides` in `index.html`.
+
+Each slide carries its own framing, because a wide header crops a tall photo
+hard and every cut sits differently in frame:
+
+```html
+style="--pos:46% 40%; --pos-d:46% 38%"
+```
+
+`--pos` is the crop on phones, `--pos-d` on desktop — the same values
+`object-position` takes. Lower the second number to show more of the top of
+the head, raise it to show more of the face. Adjust these by eye after
+swapping a photo.
+
+Only the first slide loads with the page; the rest are fetched afterwards,
+spaced out, so the header paints fast. Anyone browsing with reduced motion
+sees the first frame only and the other four are never downloaded.
+
+To change the pace, edit the `6000` in the hero block of `main.js` — keep the
+`drift` animation in `style.css` shorter than that interval, or the zoom will
+jump when a slide swaps.
+
 ## Adding photos
 
 1. Drop the new photo in `assets/img/`. Save two sizes with the same name:

@@ -66,6 +66,40 @@
     });
   }
 
+  /* ── hero slideshow ───────────────────────────────────── */
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.hero__slide'));
+  if (slides.length > 1 && !reduced) {
+    /* the first slide is the only one in the critical path; fetch the rest
+       once the page has settled, spaced out so they don't fight for bandwidth */
+    var loadRest = function () {
+      slides.slice(1).forEach(function (img, n) {
+        window.setTimeout(function () {
+          if (img.dataset.srcset) img.srcset = img.dataset.srcset;
+          if (img.dataset.src) img.src = img.dataset.src;
+        }, n * 700);
+      });
+    };
+    if (document.readyState === 'complete') loadRest();
+    else window.addEventListener('load', loadRest);
+
+    /* only cycle while the hero is actually on screen */
+    var heroVisible = true;
+    var hero = document.querySelector('.hero');
+    if (hero && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        heroVisible = entries[0].isIntersecting;
+      }, { threshold: 0.15 }).observe(hero);
+    }
+
+    var current = 0;
+    window.setInterval(function () {
+      if (!heroVisible || document.hidden) return;
+      slides[current].classList.remove('is-live');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('is-live');
+    }, 6000);
+  }
+
   /* ── lightbox ─────────────────────────────────────────── */
   var lb = document.getElementById('lightbox');
   if (!lb) return;
