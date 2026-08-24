@@ -7,20 +7,24 @@ no dependencies to install. Open `index.html` and it runs.
 
 ## What you have to fill in
 
-Four things are placeholders. Open `index.html` and search for `[SET]` —
+Three things are still placeholders. Open `index.html` and search for `[SET]` —
 every spot is marked with a comment.
 
 | What | Where | Placeholder now |
 |---|---|---|
-| Phone number | `#book` section — the `tel:` and `sms:` links plus the visible number | `(000) 000-0000` |
 | Shop address | `#book` section, "Shop" | `000 Street Name` |
 | Opening hours | `#book` section, "Hours" | `Tue – Sat · 00:00 – 00:00` |
 | Instagram | `#book` section, "Instagram" | `href="#"` |
 
-The phone number appears in three places — the **Call & book** button
-(`tel:`), the **Send a text** button (`sms:`) and the visible number under
-"Phone". Update all three. Use the full number in the links, e.g.
-`tel:+15551234567`.
+## The phone number
+
+**(229) 410-1355** is wired into five places: the header button, the hero
+button, the **Call** and **Text** buttons in The Shop, and the number listed
+under "Phone". If it ever changes, search `index.html` for `2294101355` and
+`(229) 410-1355` — the links use `tel:+12294101355` and `sms:+12294101355`,
+so update both the `href` and the visible text.
+
+On a phone, tapping any of them starts the call or opens a text.
 
 ## Pricing
 

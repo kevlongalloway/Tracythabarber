@@ -172,7 +172,12 @@ a{ color:inherit; }
   transition:border-color .2s ease, color .2s ease;
 }
 .nav a:not(.btn):hover{ border-color:var(--gold); color:var(--gold); }
-.nav__cta{ padding:.85rem 1.4rem; border-bottom:0; }
+.nav__cta{ padding:.85rem 1.4rem; border-bottom:0; gap:.4em; }
+.nav__num{ font-variant-numeric:tabular-nums; }
+/* narrow desktop: the shop still gets a tap-to-call button, just shorter */
+@media (min-width:901px) and (max-width:1119px){
+  .nav__num{ display:none; }
+}
 
 .burger{
   display:none; width:44px; height:44px; padding:11px 9px;
@@ -437,6 +442,7 @@ a{ color:inherit; }
   max-width:42ch; color:rgba(242,238,229,.7);
   font-size:clamp(1rem,1.05rem + .1vw,1.1875rem);
 }
+.book__cta .btn{ font-variant-numeric:tabular-nums; }
 .book__cta{ display:flex; flex-wrap:wrap; gap:1rem; margin:2.5rem 0 clamp(3rem,6vw,5rem); }
 
 .details{
