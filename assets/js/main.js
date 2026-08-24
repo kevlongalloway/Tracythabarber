@@ -12,15 +12,19 @@
   var burger = document.getElementById('burger');
   var nav = document.getElementById('nav');
 
+  var mast = document.getElementById('masthead');
+
   function closeNav() {
     if (!nav) return;
     nav.classList.remove('is-open');
+    if (mast) mast.classList.remove('is-nav-open');
     burger.setAttribute('aria-expanded', 'false');
   }
 
   if (burger && nav) {
     burger.addEventListener('click', function () {
       var open = nav.classList.toggle('is-open');
+      if (mast) mast.classList.toggle('is-nav-open', open);
       burger.setAttribute('aria-expanded', String(open));
     });
     nav.addEventListener('click', function (e) {
@@ -28,14 +32,14 @@
     });
   }
 
-  /* ── masthead shadow on scroll ────────────────────────── */
-  var masthead = document.getElementById('masthead');
+  /* ── masthead goes solid once you leave the hero ──────── */
+  var masthead = mast;
   var ticking = false;
   function onScroll() {
     if (ticking) return;
     ticking = true;
     requestAnimationFrame(function () {
-      masthead.classList.toggle('is-stuck', window.scrollY > 12);
+      masthead.classList.toggle('is-stuck', window.scrollY > 40);
       ticking = false;
     });
   }

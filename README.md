@@ -55,6 +55,7 @@ Currently listed:
 The gallery is built for **five** photos: two across the top, three below.
 If you add more, keep them in multiples that fill the rows — the grid is six
 columns wide, where a top-row photo spans 3 and a bottom-row photo spans 2.
+Add the photo to the strip in The Shop section too if you want it there.
 
 Photos are served at two sizes so phones don't download the large files.
 Strip location data from photos before publishing them; the ones already here
@@ -80,21 +81,35 @@ assets/img/           the cuts, plus the favicon
 
 ## Design notes
 
-The colour and type system is defined once, in the `:root` block at the top of
-`style.css`. Change a value there and it updates everywhere:
+The site follows the CRISP (crispmtl.com) design system:
 
-- `--ink` `#0E0D0C` — near-black, used for text and the dark sections
-- `--bone` `#F2EEE5` — warm off-white paper
-- `--gold` `#C08A2E` — the single accent; prices, numbers, highlights
-- `--sans` — Archivo, set in heavy uppercase with tight letter-spacing
+- **Two colours, no accent.** Paper `#F5F4F1` and ink `#09090B`, sampled from
+  the reference. Column rules are `#E6E8E4`. Nothing else — the photography
+  carries all the colour on the page.
+- **Heavy uppercase grotesk headlines**, tight tracking (`-0.035em`), set in
+  Archivo at weight 900, with a full stop closing each line: *The Essence. The
+  Realness. The Cut.*
+- **A serif eyebrow above every headline** — Instrument Serif, sentence case,
+  never tracked out. This pairing (delicate serif over heavy grotesk) is the
+  signature of the system.
+- **Column rules** run the full height of the page behind the content: two
+  columns on phones, four on desktop, aligned to the page gutter.
+- **Square-cornered buttons**, solid ink on paper and solid paper on ink.
+- **Hairline gutters** — the gallery and the photo strip use 1px gaps so the
+  photographs read as a single block, the way the reference sets its grids.
 
-Layout follows an editorial grid: oversized headlines, hairline rules,
-numbered sections and full-bleed photography. The barber-pole stripe between
-sections and the scrolling banner are the only decorative elements — the
-photos do the rest of the work.
+Every value lives in the `:root` block at the top of `style.css`. Change it
+there and it changes everywhere.
 
 Fonts are self-hosted rather than loaded from Google Fonts, so the site works
 on slow connections and doesn't depend on an outside service.
 
 Motion respects `prefers-reduced-motion`; the banner stops scrolling and the
 reveal animations are skipped for anyone who has that turned on.
+
+## Photography
+
+The cuts run in full colour in the gallery. The strip in The Shop section is
+desaturated on purpose — it sits behind the headline as texture, echoing the
+black-and-white portrait grid in the reference. If you want that in colour
+too, remove `filter:grayscale(1)` from `.strip img`.
