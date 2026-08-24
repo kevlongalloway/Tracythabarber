@@ -5,26 +5,22 @@ Website for Tracy Tha Barber — *the essence of cutting*.
 A static site: plain HTML, CSS and JavaScript. No build step, no framework,
 no dependencies to install. Open `index.html` and it runs.
 
-## What you have to fill in
+## Shop details
 
-**Opening hours are the only placeholder left.** They read
-`Tue – Sat · 00:00 – 00:00` in the details block of the `#shop` section,
-marked `[SET]` in `index.html`. Set them before the site goes live — or
-replace that line with something like "Call or text for today's hours" if
-they vary.
-
-Everything else is live:
+Nothing is left to fill in — every detail on the site is real:
 
 | What | Value |
 |---|---|
 | Phone | (229) 410-1355 |
-| Shop | Wesley Chapel Crossing, 2440 Wesley Chapel Rd, Suite A, Decatur, GA 30035 |
+| Shop | Wesley Chapel Crossing, 2446 Wesley Chapel Rd, Suite A, Decatur, GA 30035 |
+| Hours | Mon – Sat, 9am – 7pm · Sunday, 9am – 6pm |
 | Instagram | [@wennonali](https://instagram.com/wennonali) |
 
-The address links out to Google Maps, and the same details are repeated in a
-`BarberShop` structured-data block in the page head so the shop can turn up
-in local search. **If any of them change, update both places** — the visible
-text and the JSON block near the top of `index.html`.
+The address links out to Google Maps, and all of these details are repeated
+in a `BarberShop` structured-data block in the page head — that is what
+Google reads to show the shop, its hours and its map pin in local results.
+**If any detail changes, update both places** — the visible text near the
+foot of `index.html` and the JSON block near the top.
 
 ## The phone number
 

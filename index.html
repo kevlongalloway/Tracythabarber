@@ -28,20 +28,34 @@
   "image": "assets/img/hero.jpg",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "2440 Wesley Chapel Rd, Suite A",
+    "streetAddress": "2446 Wesley Chapel Rd, Suite A",
     "addressLocality": "Decatur",
     "addressRegion": "GA",
     "postalCode": "30035",
     "addressCountry": "US"
   },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "09:00",
+      "closes": "19:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  ],
   "sameAs": ["https://instagram.com/wennonali"]
 }
 </script>
 
 <!-- ───────────────────────────────────────────────────────────────
-     TODO for the shop: opening hours are still a placeholder, marked
-     [SET] further down. Everything else — phone, address, Instagram —
-     is live.
+     Shop details (phone, address, hours, Instagram) appear twice:
+     in the visible markup near the foot of the page, and in the
+     structured-data block just above. Change both together.
      ─────────────────────────────────────────────────────────── -->
 </head>
 <body>
@@ -278,17 +292,16 @@
       <div>
         <dt>The shop</dt>
         <dd>
-          <a href="https://maps.google.com/?q=2440+Wesley+Chapel+Rd+Suite+A+Decatur+GA+30035" target="_blank" rel="noopener">
+          <a href="https://maps.google.com/?q=2446+Wesley+Chapel+Rd+Suite+A+Decatur+GA+30035" target="_blank" rel="noopener">
             Wesley Chapel Crossing<br>
-            2440 Wesley Chapel Rd, Suite A<br>
+            2446 Wesley Chapel Rd, Suite A<br>
             Decatur, GA 30035
           </a>
         </dd>
       </div>
       <div>
         <dt>Hours</dt>
-        <!-- [SET] -->
-        <dd>Tue – Sat · 00:00 – 00:00<br>Sun &amp; Mon · Closed</dd>
+        <dd>Mon – Sat · 9am – 7pm<br>Sunday · 9am – 6pm</dd>
       </div>
       <div>
         <dt>Phone</dt>
