@@ -440,8 +440,13 @@ main, .masthead, .footer{ position:relative; z-index:1; }
   color:var(--muted-d); margin-bottom:.55rem;
 }
 .details dd{ margin:0; font-size:1.0625rem; line-height:1.5; }
-.details a{ text-decoration:none; border-bottom:1px solid var(--rule-d); }
-.details a:hover{ border-bottom-color:currentColor; }
+/* underline, not a border — the address runs to three lines */
+.details a{
+  text-decoration:underline; text-decoration-thickness:1px;
+  text-underline-offset:4px; text-decoration-color:var(--rule-d);
+  transition:text-decoration-color .2s ease;
+}
+.details a:hover{ text-decoration-color:currentColor; }
 
 /* ═══ FOOTER ═════════════════════════════════════════════════ */
 .footer{

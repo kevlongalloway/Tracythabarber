@@ -7,14 +7,24 @@ no dependencies to install. Open `index.html` and it runs.
 
 ## What you have to fill in
 
-Three things are still placeholders. Open `index.html` and search for `[SET]` —
-every spot is marked with a comment.
+**Opening hours are the only placeholder left.** They read
+`Tue – Sat · 00:00 – 00:00` in the details block of the `#shop` section,
+marked `[SET]` in `index.html`. Set them before the site goes live — or
+replace that line with something like "Call or text for today's hours" if
+they vary.
 
-| What | Where | Placeholder now |
-|---|---|---|
-| Shop address | `#book` section, "Shop" | `000 Street Name` |
-| Opening hours | `#book` section, "Hours" | `Tue – Sat · 00:00 – 00:00` |
-| Instagram | `#book` section, "Instagram" | `href="#"` |
+Everything else is live:
+
+| What | Value |
+|---|---|
+| Phone | (229) 410-1355 |
+| Shop | Wesley Chapel Crossing, 2440 Wesley Chapel Rd, Suite A, Decatur, GA 30035 |
+| Instagram | [@wennonali](https://instagram.com/wennonali) |
+
+The address links out to Google Maps, and the same details are repeated in a
+`BarberShop` structured-data block in the page head so the shop can turn up
+in local search. **If any of them change, update both places** — the visible
+text and the JSON block near the top of `index.html`.
 
 ## The phone number
 
