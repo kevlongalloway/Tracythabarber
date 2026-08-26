@@ -60,6 +60,48 @@ The copy in that section describes how he works. It makes no claims about
 years in business, training or awards — add those yourself if you want them
 in there.
 
+## The logo
+
+`assets/img/logo.png` is the badge with the white background cut away, so it
+sits on the site's near-black. Everything else is generated from it:
+
+| File | Used for |
+|---|---|
+| `logo.png` | the seal that closes the page, and the logo in the structured data |
+| `favicon-32.png`, `favicon-192.png` | the browser tab icon |
+| `apple-touch-icon.png` | the icon when someone saves the site to a phone home screen |
+| `share-card.jpg` | the picture that appears when the link is pasted into a text, Instagram or Facebook |
+
+The badge is **not** in the top bar. It is a circular seal with four tiers of
+type inside it, and the bar is 74px tall — shrunk to fit, the words become
+unreadable smudges. The gold also fights a palette that is deliberately two
+colours. The typographic wordmark carries the top of the page; the badge
+signs off the bottom, on black, where its own background disappears into the
+page and the gold reads as intended.
+
+If you want the badge up top, the fix is a simplified mark — just the TB
+monogram and the razor, no ring, no small type — which would hold at that
+size.
+
+## Getting the logo onto Google
+
+The logo on a Google listing does **not** come from the website. It comes
+from the Google Business Profile, and only the profile owner can change it:
+
+1. Sign in at [business.google.com](https://business.google.com) with the
+   account that manages the listing.
+2. Open the profile → **Edit profile** → **Photos** → **Logo**.
+3. Upload the badge — square, at least 720×720. `favicon-512.png` works, or
+   the original file.
+
+It usually appears within a few days.
+
+Publishing this site helps in a second way: the page carries a `logo` field
+in its structured data pointing at `logo.png`. **Once the site is on a real
+domain, change the paths in that block from relative to absolute** (for
+example `https://yourdomain.com/assets/img/logo.png`) — Google is much more
+reliable about reading absolute URLs there.
+
 ## The hero slideshow
 
 The header cycles through five cuts, crossfading every six seconds with a

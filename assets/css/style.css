@@ -465,11 +465,21 @@ main, .masthead, .footer{ position:relative; z-index:1; }
 /* ═══ FOOTER ═════════════════════════════════════════════════ */
 .footer{
   background:var(--ink); color:var(--muted-d);
-  padding:0 var(--gutter) 2.5rem;
-  display:flex; flex-wrap:wrap; gap:.4rem 2rem; justify-content:space-between;
-  font-size:.6875rem; font-weight:700; text-transform:uppercase; letter-spacing:.14em;
+  padding:clamp(3.5rem,7vw,5.5rem) var(--gutter) 2.5rem;
+  text-align:center;
 }
-.footer p{ margin:0; }
+/* the badge is already black, so on ink it reads as a stamp, not a sticker */
+.footer__seal{
+  width:clamp(112px,17vw,168px); height:auto;
+  margin:0 auto clamp(2.5rem,5vw,3.5rem);
+}
+.footer__row{
+  display:flex; flex-wrap:wrap; gap:.4rem 2rem; justify-content:space-between;
+  padding-top:1.75rem; border-top:1px solid var(--rule-d);
+  font-size:.6875rem; font-weight:700; text-transform:uppercase; letter-spacing:.14em;
+  text-align:left;
+}
+.footer__row p{ margin:0; }
 
 /* ═══ LIGHTBOX ═══════════════════════════════════════════════ */
 .lightbox{
