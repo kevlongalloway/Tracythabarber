@@ -68,7 +68,8 @@ sits on the site's near-black. Everything else is generated from it:
 | File | Used for |
 |---|---|
 | `logo.png` | the seal that closes the page, and the logo in the structured data |
-| `favicon-32.png`, `favicon-192.png` | the browser tab icon |
+| `/favicon.ico` (repo root) | the icon Google shows beside the search result, and the browser tab |
+| `favicon-48/96/192.png` | icon sizes Google prefers, declared in the page head |
 | `apple-touch-icon.png` | the icon when someone saves the site to a phone home screen |
 | `share-card.jpg` | the picture that appears when the link is pasted into a text, Instagram or Facebook |
 
@@ -83,24 +84,49 @@ If you want the badge up top, the fix is a simplified mark — just the TB
 monogram and the razor, no ring, no small type — which would hold at that
 size.
 
-## Getting the logo onto Google
+## The logo on Google
 
-The logo on a Google listing does **not** come from the website. It comes
-from the Google Business Profile, and only the profile owner can change it:
+There are two different logos on Google and they come from different places.
 
-1. Sign in at [business.google.com](https://business.google.com) with the
-   account that manages the listing.
-2. Open the profile → **Edit profile** → **Photos** → **Logo**.
-3. Upload the badge — square, at least 720×720. `favicon-512.png` works, or
-   the original file.
+**The little icon beside the search result** comes from this site. It is
+`/favicon.ico` at the repository root, backed up by the PNGs linked in the
+page head. Google's rules for it are specific, and they are met here:
 
-It usually appears within a few days.
+- square, and sized in multiples of 48 (48, 96, 192)
+- reachable at a stable URL that `robots.txt` does not block
+- declared with `<link rel="icon">` in the head
 
-Publishing this site helps in a second way: the page carries a `logo` field
-in its structured data pointing at `logo.png`. **Once the site is on a real
-domain, change the paths in that block from relative to absolute** (for
-example `https://yourdomain.com/assets/img/logo.png`) — Google is much more
-reliable about reading absolute URLs there.
+Google re-crawls favicons on its own schedule, so expect **days to a few
+weeks**, not minutes. You can nudge it by requesting indexing for the
+homepage in [Google Search Console](https://search.google.com/search-console).
+
+`favicon.ico` holds six sizes. The 16 and 32 pixel versions are the TB
+monogram on its own — the full badge's ring and small type turn to mush that
+small — and 48 and up are the whole badge.
+
+**The logo on the business listing** (the map panel, with the hours and the
+Call button) does *not* come from this site. Only the profile owner can set
+it:
+
+1. Sign in at [business.google.com](https://business.google.com).
+2. Profile → **Edit profile** → **Photos** → **Logo**.
+3. Upload a square image, 720×720 or larger — `favicon-512.png` or the
+   original logo file.
+
+## If Google shows the wrong business
+
+Google has previously mixed this shop up with a different "Tracy the Barber"
+in another country. That is Google's entity matching, and no single file
+fixes it. What moves it is consistent signals pointing at the same business:
+
+- the structured data in the page head, which now carries an `@id`, the site
+  URL, the address, the hours and a `sameAs` link to the Instagram account
+- the same name, address and phone written identically here and on the
+  Google Business Profile
+- the website field on the Business Profile pointing at this domain
+
+Claim the listing if it is not claimed, make the details match exactly, and
+use the **feedback** link under an incorrect AI Overview to report it.
 
 ## The hero slideshow
 

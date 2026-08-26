@@ -1,0 +1,6 @@
+# Everything here is meant to be found — including the favicon,
+# which Google will not show in results if it cannot crawl it.
+User-agent: *
+Allow: /
+
+Sitemap: https://tracythabarber.com/sitemap.xml
